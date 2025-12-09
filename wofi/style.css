@@ -1,0 +1,96 @@
+@define-color accent transparent;
+@define-color txt #FFFFFF;
+@define-color bg rgba(255, 255, 255, 0.1);
+@define-color bg2 transparent;
+
+ * {
+    all: initial;
+    font-family: 'JetBrains Mono', regular;
+    font-size: 16px;
+ }
+
+ /* Window */
+ window {
+    background-color: transparent;
+    animation: slideIn 0.5s ease-in-out both;
+ }
+
+ /* Slide In */
+ @keyframes slideIn {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+       opacity: 1;
+    }
+ }
+
+ /* Inner Box */
+ #inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+    border-radius: 0px;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Fade In */
+ @keyframes fadeIn {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+       opacity: 1;
+    }
+ }
+
+ /* Outer Box */
+ #outer-box {
+    margin: 10px;
+    padding: 5px;
+    background-color: 0;
+ }
+
+ /* Scroll */
+ #scroll {
+ }
+
+ /* Input */ 
+#input {
+    display: none;
+    margin: -1000px 5px;
+    color: #FFFFFF;
+    background-color: transparent;
+    animation: fadeIn 0.5s ease-in-out both;
+    border-radius: 0px;
+ }
+
+ #input-focus {
+
+    box-shadow:none;
+
+    }
+
+
+ /* Text */
+ #text {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    color: @txt;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Selected Entry */
+ #entry:selected {
+    background-color: #210554;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    outline: none;
+ }
+
+ #entry:selected #text {
+    color: @txt;
+ }
