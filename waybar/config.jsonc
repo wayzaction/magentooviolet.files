@@ -1,0 +1,90 @@
+{
+    "position": "top",
+    "height": 48, 
+    "width": 1920,  
+    "margin-top": 0,
+    "margin-right": 10,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "spacing": 5,
+    
+    "modules-left": [
+	  "pulseaudio#output",
+	  "pulseaudio#input",
+	  "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "hyprland/language",
+	      "tray"
+    ],
+
+
+    "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:L%A, %B %d, %Y | %R}",
+      "tooltip-format": "<span size='12pt' font='JetBrains Mono'>{calendar}</span>",
+      "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 4,
+                    "weeks-pos"     : "none",
+                    "format": {
+                              "months":     "<span color='#ffffff'><b>{}</b></span>",
+                              "days":       "<span color='#ffffff'>{}</span>",
+                              "weekdays":   "<span color='#0DCDCD'><b>{}</b></span>",
+                              "today":      "<span color='#CB1ED1'><b><u>{}</u></b></span>"
+                              }
+                    },
+      "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+
+    "cpu": {
+      "format": "{usage} ",
+      "tooltip": true,
+	    "on-click": "exec kitty -e btop"
+    },
+
+    "memory": {
+      "format": "{} ",
+	    "tooltip": true,
+	    "on-click": "exec kitty -e btop"
+    },
+
+   "pulseaudio#input": {
+     "format-source": " {volume}%",
+     "format-source-muted": " off",
+     "format": "{format_source}",
+     "scroll-step": 1,
+     "smooth-scrolling-threshold": 1,
+     "max-volume": 100,
+     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+    },
+
+
+   "pulseaudio#output": {
+     "format": "{icon}  {volume}%",
+     "format-muted": " off",
+     "format-icons": {
+        "default": ["", "", ""]
+    }, 
+     "max-volume": 120,
+     "scroll-step": 2,
+     "smooth-scrolling-threshold": 1,
+     "on-click": "exec kitty -e wiremix"
+}
+
+}
+}
