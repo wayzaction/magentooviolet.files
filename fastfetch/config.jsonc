@@ -1,0 +1,66 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "gentoo2",
+        "color": {
+            "1": "magenta",
+            "2": "white"
+        }
+    },
+    "display": {
+        "color": {
+            "separator": "magenta"
+        },
+        "separator": " | ",
+        "constants": [
+            "X------------X---------------------------------------------X"
+        ]
+    },
+    "modules": [
+        {
+            "type": "kernel",
+            "key": "Gentoo Linux",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "{$1}",
+            "outputColor": "separator"
+        },
+        {
+            "type": "display",
+            "key": "   Display  ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "cpu",
+            "key": "   CPU      ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "gpu",
+            "key": "   GPU      ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "memory",
+            "key": "   RAM      ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "swap",
+            "key": "   SWAP     ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "disk",
+            "key": "   Disk     ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "{$1}",
+            "outputColor": "separator"
+        },
+    ]
+}
