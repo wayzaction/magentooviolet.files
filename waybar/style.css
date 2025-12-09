@@ -1,0 +1,113 @@
+@define-color back0  #210554;
+
+* {
+    font-family: FontAwesome, JetBrains Mono;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+window#waybar {
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    border-bottom: 1px solid;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#window,
+#network,
+#language,
+#pulseaudio,
+#tray,
+#wireplumber,
+#custom-media,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    margin: 5px;
+    padding: 0 10px;
+    background-color: @back0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#window:hover,
+#network:hover,
+#language:hover,
+#pulseaudio:hover,
+#tray:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#mpd:hover {
+    margin: 1px;
+    padding: 0 10px;
+    background-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%);
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+#workspaces {
+    all: initial;
+    margin: 5px;
+    padding: 0 10px;
+    background-color: @back0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+#workspaces:hover {
+    all: initial;
+    margin: 1px;
+    padding: 0 10px;
+    background-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%);
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+
+#tray menu {
+    margin: 5px;
+    padding: 0 10px;
+    background-color: @back0;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+tooltip {
+    margin: 5px;
+    padding: 0 10px;
+    background-color: @back0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #5902fc  0%, #CB1ED1 100%) 1;
+    color: #ffffff;
+    border-radius: 1px;
+    transition: 0.3s;
+}
