@@ -9,9 +9,10 @@
     "spacing": 5,
     
     "modules-left": [
-	  "pulseaudio#output",
-	  "pulseaudio#input",
-	  "hyprland/workspaces"
+    	"custom/wlpchanger",
+	"pulseaudio#output",
+	"pulseaudio#input",
+	"hyprland/workspaces"
     ],
     "modules-center": [
         "clock"
@@ -20,15 +21,15 @@
         "cpu",
         "memory",
         "hyprland/language",
-	      "tray"
+	"tray"
     ],
 
 
     "clock": {
-      "format": "{:%H:%M}",
-      "format-alt": "{:L%A, %B %d, %Y | %R}",
-      "tooltip-format": "<span size='12pt' font='JetBrains Mono'>{calendar}</span>",
-      "calendar": {
+        "format": "󱑁 | {:%H:%M} | ",
+        "format-alt": "󱑁 | {:L%A, %B %d, %Y | %R} | ",
+        "tooltip-format": "<span size='12pt' font='JetBrains Mono'>{calendar}</span>",
+        "calendar": {
                     "mode"          : "month",
                     "mode-mon-col"  : 4,
                     "weeks-pos"     : "none",
@@ -39,7 +40,7 @@
                               "today":      "<span color='#CB1ED1'><b><u>{}</u></b></span>"
                               }
                     },
-      "actions":  {
+        "actions":  {
                     "on-click-right": "mode",
                     "on-click-forward": "tz_up",
                     "on-click-backward": "tz_down",
@@ -48,43 +49,73 @@
                     }
     },
 
+    "custom/wlpchanger": {
+        "icon-size": 1,
+	"format": "󰣨",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/wlpchanger.sh"
+	},
 
     "cpu": {
-      "format": "{usage} ",
-      "tooltip": true,
-	    "on-click": "exec kitty -e btop"
+        "format": "{usage}% ",
+        "tooltip": true,
+	"on-click": "exec kitty -e btop"
+    },
+
+    "hyprland/language": {
+      "format": "{} 󰌌" 
+
     },
 
     "memory": {
-      "format": "{} ",
-	    "tooltip": true,
-	    "on-click": "exec kitty -e btop"
+        "format": "{}% ",
+	"tooltip": true,
+	"on-click": "exec kitty -e btop"
     },
 
    "pulseaudio#input": {
-     "format-source": " {volume}%",
-     "format-source-muted": " off",
-     "format": "{format_source}",
-     "scroll-step": 1,
-     "smooth-scrolling-threshold": 1,
-     "max-volume": 100,
-     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
-     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+    "format-source": " {volume}%",
+    "format-source-muted": "  off",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     },
+
+   
 
 
    "pulseaudio#output": {
-     "format": "{icon}  {volume}%",
-     "format-muted": " off",
-     "format-icons": {
-        "default": ["", "", ""]
+    "format": "{icon} {volume}%",
+    "format-muted": "󰓄 off",
+    "format-icons": {
+        "default": ["󰓃", "󰓃", "󰓃"]
     }, 
-     "max-volume": 120,
-     "scroll-step": 2,
-     "smooth-scrolling-threshold": 1,
-     "on-click": "exec kitty -e wiremix"
-}
+    "max-volume": 120,
+    "scroll-step": 2,
+    "smooth-scrolling-threshold": 1,
+    "on-click": "exec kitty -e wiremix"
+},
+
+    "hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"1": "󰎤",
+		"2": "󰎧",
+		"3": "󰎪",
+		"4": "󰎭",
+		"5": "󰎱",
+		"active": "󰒅",
+		"default": "󰴲"
+	}
+      /* "persistent-workspaces": {
+             "*": 5
+       } */
+  }
+
 
 }
 }
