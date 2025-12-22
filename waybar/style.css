@@ -20,6 +20,7 @@ window#waybar {
 #disk,
 #temperature,
 #window,
+#custom-wlpchanger,
 #network,
 #language,
 #pulseaudio,
@@ -54,6 +55,7 @@ window#waybar {
 #tray:hover,
 #wireplumber:hover,
 #custom-media:hover,
+#custom-wlpchanger:hover,
 #mode:hover,
 #idle_inhibitor:hover,
 #scratchpad:hover,
@@ -65,6 +67,7 @@ window#waybar {
     color: #ffffff;
     border-radius: 1px;
     transition: 0.3s;
+    
 }
 
 #workspaces {
